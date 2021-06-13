@@ -1,0 +1,21 @@
+server:
+  port: 8085
+spring:
+  application:
+    name: goods-web
+  thymeleaf:
+    cache: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+    registry-fetch-interval-seconds: 10
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 15
+ribbon:
+  ConnectTimeout: 50000 #请求连接的超时时间，默认时间为1秒
+  ReadTimeout: 50000
+feign:
+  hystrix:
+    enabled: false #请求处理的超时时间
